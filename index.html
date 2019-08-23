@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./public/css/style.css">
+    <title>O matador de Monstros</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="game-infos">
+            <div class="characters">
+                <div class="player">
+                    <h3>Jogador</h3>
+                    <div class="life-bar">
+                        <span class='absolute'>{{playerHp}}</span>
+                        <div class="health" :style='playerHealthBar'></div>
+                    </div>
+                </div>
+                <div class="monster">
+                    <h3>Monstro</h3>
+                    <div class="life-bar">
+                        <span class='absolute'>{{monsterHp}}</span>
+                        <div class="health" :style='monsterHealthBar'></div>
+                    </div>
+                </div>
+            </div>
+            <div class="commands" v-show='!gameOver'>
+                <div class="attack" @click='attack'>ATACAR</div>
+                <div class="special-attack" @click='specialAttack' v-if='!especialUsed'>ATAQUE ESPECIAL</div>
+                <div class="regen" @click='regen'>REGENERAR</div>
+                <div class="giveup" @click='giveup'>DESISTIR</div>
+            </div>
+            <div class="commands winner" v-show='gameOver'>
+                <div v-if='monsterWins' :style='[{background: "red"}, {width: "100%"}, {fontSize: "20px"}]'>{{winner}}</div>
+                <div v-else :style='[{background: "green"}, {width: "100%"}, {fontSize: "20px"}]'>{{winner}}</div>
+            </div>
+            <div class="play-again" v-show='gameOver' @click='reset'>Jogar novamente</div>
+        
+        </div>
+        <div class="log">
+            <div class="logs" v-for='value in log.slice().reverse()'>{{value}}</div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./public/js/script.js"></script>
+
+</html>

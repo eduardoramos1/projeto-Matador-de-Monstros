@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+
+
+
+/* Wrapper */
+.wrapper{
+    display: grid;
+    margin: 10px;
+    grid-gap: 1rem;
+
+}
+
+.wrapper > div{
+    border: 1px solid black;
+    height: 45vh ;
+    margin: 5px;
+}
+
+.game-infos .characters{
+    display: flex;
+    justify-content: space-around;
+}
+
+.game-infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* Player e Monstro */
+
+.player{
+    width: 40%;
+    border: black 1px solid;
+    height: 10vh;    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.monster{
+    width: 40%;
+    border: 1px black solid;
+    height: 10vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;  
+}
+
+.life-bar{
+    width: 30vw;
+    height: 15px;
+    position: relative;
+
+}
+
+.health{
+    background: green;
+    width: 100%;
+    height: 15px;
+    text-align: center;
+  
+    
+}
+
+.absolute{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    
+}
+
+/* commands */
+
+.commands{
+    display: grid;
+    grid-template-columns: .5fr;
+    justify-content: center;
+    row-gap: .6rem;
+    text-align: center;
+}
+
+.attack,.regen, .giveup, .winner, .play-again, .special-attack{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #eeeeee;
+}
+
+.attack{
+    background: rgb(196, 40, 40);   
+}
+
+.attack:hover{
+    background: rgb(146, 7, 7);  
+    cursor: pointer; 
+}
+
+
+.special-attack{
+    background: rgb(137, 161, 1);   
+}
+
+.special-attack:hover{
+    background: rgb(118, 138, 4);     
+    cursor: pointer; 
+}
+
+
+.regen{
+    background: forestgreen;
+}
+
+.regen:hover {
+    background: rgb(8, 65, 8);
+    cursor: pointer; 
+}
+
+.giveup{
+    background: gray;
+}
+
+.giveup:hover{
+    background: rgb(82, 81, 81);
+    cursor: pointer; 
+}
+
+.play-again{
+    padding: 30px;
+    font-size: 1.5rem;
+    background: gray;
+}
+
+.play-again:hover{
+    padding: 30px;
+    font-size: 1.5rem;
+    background: rgb(70, 70, 70);
+    cursor: pointer;
+}
+
+/* Logs */
+
+.log{
+     background: #eeeeee;
+     overflow-y: scroll;
+}
+
+.logs:nth-child(even){
+    background: red;
+}
